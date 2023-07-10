@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-with open('zenfile.txt', 'r') as file:
-    for line in file:
-            print(line.rstrip())
+with open('zenfile.txt') as f:
+    print(f.read().strip())
 
