@@ -1,4 +1,10 @@
 #!/usr/bin/python3
 
-import compileall
-compileall.compile_file('$PYFILE')
+import os
+import py_compile
+
+script_file = os.environ.get('PYFILE')
+
+if script_file:
+    bytecode_file = script_file + 'c'
+py_compile.compile(script_file, bytecode_file)
