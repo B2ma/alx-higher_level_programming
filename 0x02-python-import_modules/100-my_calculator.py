@@ -2,7 +2,7 @@
 import sys
 from calculator_1 import add, sub, mul, div
 if __name__ == "__main__":
-    if len(sys.argv[1:]) != 3:
+    if len(sys.argv) - 1 != 3:
         print("usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
     a = int(sys.argv[1])
