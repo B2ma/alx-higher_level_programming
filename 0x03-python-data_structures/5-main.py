@@ -1,7 +1,6 @@
-#!/usr/bin/python3
-def no_c(my_string):
-    new_str = ''
-    for char in my_sting:
-        if char.lower() != 'c' and char.upper != 'C':
-            new_str += char
-    return new_str
+#!/usr/bin/env python3
+no_c = __import__('5-no_c').no_c
+
+print(no_c("Best School"))
+print(no_c("Chicago"))
+print(no_c("C is fun!"))
