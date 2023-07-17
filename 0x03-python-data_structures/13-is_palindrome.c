@@ -16,12 +16,12 @@ if (*head == NULL || (*head)->next == NULL)
 return (0);
 while (fast != NULL && fast->next != NULL)
 {
-fast = fast->next->next;
-temp = slow;
-slow = slow->next;
+fast = fast->next->next, temp = slow, slow = slow->next;
 }
 if (fast != NULL)
 slow = slow->next;
+if (slow != NULL && slow->next == NULL && slow->n != (*head)->n)
+return (0);
 while (slow != NULL)
 {
 temp = slow->next;
