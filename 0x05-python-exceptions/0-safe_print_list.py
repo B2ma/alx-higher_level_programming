@@ -8,8 +8,8 @@ def safe_print_list(my_list=[], x=0):
                 i += 1
             else:
                 break
-    except:
-        pass
+    except TypeError as e:
+        print("Error: ", e)
     finally:
         print()
     return i
