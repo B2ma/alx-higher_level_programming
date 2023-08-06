@@ -1,0 +1,94 @@
+#0-add_integer.txt
+
+===========================
+How to Use 0-add_integer.py
+===========================
+
+This is a doctest file for the `add_integer` function.
+This is its Prototype: def add_integer(a, b=98):
+a and b must be integers or floats
+a and b must be first casted to integers if they are float
+Returns an integer: the addition of a and b
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Test cases with positive integers
+>>> add_integer(100, 200)
+300
+
+Test cases with negative integers
+>>> add_integer(-100, -200)
+-300
+
+Test cases with positive floats
+>>> add_integer(2.5, 3.7)
+5
+
+Test cases with negative floats
+>>> add_integer(-2.5, -3.7)
+-5
+
+Test cases with mixed integers and floats
+>>> add_integer(5, 2.5)
+7
+
+Test cases with zero
+>>> add_integer(0, 10)
+10
+
+>>> add_integer(10, 0)
+10
+
+>>> add_integer(0, 0)
+0
+
+Test cases with default value of b
+>>> add_integer(5)
+103
+
+>>> add_integer(0)
+98
+
+>>> add_integer(-2)
+96
+
+Test cases with large numbers
+>>> add_integer(999999999999999, 1)
+1000000000000000
+
+>>> add_integer(10, 999999999999999)
+1000000000000009
+
+>>> add_integer(999999999999999, 999999999999999)
+1999999999999998
+
+Test cases with invalid inputs
+>>> add_integer("1", 2)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(1, "2")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer("1", "2")
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(None, 5)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(10, None)
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+>>> add_integer(None, None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer

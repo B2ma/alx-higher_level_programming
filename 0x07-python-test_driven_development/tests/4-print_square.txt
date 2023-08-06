@@ -1,0 +1,34 @@
+#4-print_square.txt
+
+================================
+How to Use print_square Function
+================================
+
+This is a doctest file for the print_square function.
+Its prototype is: Prototype: def print_square(size):
+size is the size length of the square
+size must be an integer, otherwise raise a TypeError with a message
+if size is less than 0, raise a ValueError with a message
+if size is a float and is less than 0, raise a TypeError exception with a message.
+
+>>> print_square = __import__('4-print_square').print_square
+
+>>> print_square(5)
+#####
+#####
+#####
+#####
+#####
+
+>>> print_square(0)
+
+>>> print_square("hello")
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+
+>>> print_square(-2)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
+

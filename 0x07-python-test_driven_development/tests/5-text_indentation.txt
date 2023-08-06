@@ -1,0 +1,38 @@
+#5-text_indentation.txt
+====================================
+How to Use text_indentation Function
+====================================
+
+This is a doctest file for the text_indentation function.
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("This is a simple sentence.")
+This is a simple sentence.
+<BLANKLINE>
+>>> text_indentation("Hello? How are you?")
+Hello?
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+>>> text_indentation("Please read this: It's important.")
+Please read this:
+<BLANKLINE>
+It's important.
+<BLANKLINE>
+>>> text_indentation("Hi. How can I help you? Is there anything I can assist you with?")
+Hi.
+<BLANKLINE>
+How can I help you?
+<BLANKLINE>
+Is there anything I can assist you with?
+<BLANKLINE>
+>>> text_indentation(123)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation(["This", "is", "a", "list."])
+Traceback (most recent call last):
+...
+TypeError: text must be a string
