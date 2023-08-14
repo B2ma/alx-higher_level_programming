@@ -68,6 +68,6 @@ class Rectangle (BaseGeometry):
         Return the rectangle description for str().
 
         Returns:
-            str: Rectangle description in the format [Rectangle] <width>/<height>
+            str: Rectangle description as [Rectangle] <width>/<height>
         """
         return "[Rectangle] {}/{}".format(self.__width, self.__height)
