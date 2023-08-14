@@ -1,0 +1,46 @@
+# MyList Class Test Cases:
+
+>>> MyList = __import__('1-my_list').MyList
+
+# Test Case: Initialize an empty MyList
+>>> mylist = MyList()
+>>> print(mylist)
+[]
+>>> mylist.print_sorted()
+[]
+
+# Test Case: Initialize MyList with integers
+>>> mylist = MyList([3, 1, 2, 5, 4])
+>>> print(mylist)
+[3, 1, 2, 5, 4]
+>>> mylist.print_sorted()
+[1, 2, 3, 4, 5]
+
+# Test Case: Append an integer value
+>>> mylist.append(6)
+>>> print(mylist)
+[3, 1, 2, 5, 4, 6]
+>>> mylist.print_sorted()
+[1, 2, 3, 4, 5, 6]
+
+# Test Case: Extend with integer values
+>>> mylist.extend([9, 7, 8])
+>>> print(mylist)
+[3, 1, 2, 5, 4, 6, 9, 7, 8]
+>>> mylist.print_sorted()
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# Test Case: Insert a value at a specific index
+>>> mylist.insert(2, 10)
+>>> print(mylist)
+[3, 1, 10, 2, 5, 4, 6, 9, 7, 8]
+>>> mylist.print_sorted()
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Test Case: Set value at index
+>>> mylist[4] = 0
+>>> print(mylist)
+[3, 1, 10, 2, 0, 4, 6, 9, 7, 8]
+>>> mylist.print_sorted()
+[0, 1, 2, 3, 4, 6, 7, 8, 9, 10]
+

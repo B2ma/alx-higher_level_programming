@@ -1,0 +1,60 @@
+# BaseGeometry Class Test Cases:
+
+# Import the BaseGeometry class from the module
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+# Test Case: Initialize an instance of BaseGeometry
+>>> geometry = BaseGeometry()
+
+# Test Case: Call area() method on an instance
+>>> geometry.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+# Test Case: Call integer_validator() with valid values
+>>> geometry.integer_validator("test", 5)
+>>> geometry.integer_validator("number", 10)
+
+# Test Case: Call integer_validator() with non-integer values
+>>> geometry.integer_validator("test", "string")
+Traceback (most recent call last):
+...
+TypeError: test must be an integer
+
+# Test Case: Call integer_validator() with zero value
+>>> geometry.integer_validator("number", 0)
+Traceback (most recent call last):
+...
+ValueError: number must be greater than 0
+
+# Test Case: Call integer_validator() with negative value
+>>> geometry.integer_validator("number", -5)
+Traceback (most recent call last):
+...
+ValueError: number must be greater than 0
+
+# Test Case: Call integer_validator() with valid float value
+>>> geometry.integer_validator("float_number", 5.0)
+Traceback (most recent call last):
+...
+TypeError: float_number must be an integer
+
+# Test Case: Call integer_validator() with invalid float value
+>>> geometry.integer_validator("float_number", 5.5)
+Traceback (most recent call last):
+...
+TypeError: float_number must be an integer
+
+# Test Case: Call integer_validator() with no parameters
+>>> geometry.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+# Test Case: Call integer_validator() with only one parameter
+>>> geometry.integer_validator("number")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
