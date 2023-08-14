@@ -1,20 +1,14 @@
-#!/usr/bin/pythom3
-"""This module contains a class that inherits from list class"""
+#!/usr/bin/python3
+"""This module contains a class MyList that inherits from list class"""
 
 
 class MyList(list):
     """
-    Mylist class that inherits from list .
-
-    Only integer values are allowed in the list.
+    MyList class that inherits from list.
 
     Public Methods:
     print_sorted(): prints the list, but sorted (ascending sort)
-
-    Attributes:
-    Inherits all attributes of the built-in list class.
     """
-
 
     def print_sorted(self):
         """
