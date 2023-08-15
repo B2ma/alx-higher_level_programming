@@ -18,9 +18,9 @@ def class_to_json(obj):
         serialization of an object
     """
     output = {}
-    for attribute_name in dir(obj):
-        if not attribute_name.startswith("__") and hasattr(obj, attribute_name):
-            attribute_value = getattr(obj, attribute_name)
-            if isinstance(attribute_value, (list, dict, str, int, bool)):
-                output[attribute_name] = attribute_value
+    for attribut_name in dir(obj):
+        if not attribut_name.startswith("__") and hasattr(obj, attribut_name):
+            attribut_value = getattr(obj, attribut_name)
+            if isinstance(attribut_value, (list, dict, str, int, bool)):
+                output[attribut_name] = attribut_value
     return output
