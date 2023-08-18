@@ -72,3 +72,24 @@ class Base:
          """
         output = json.loads(json_string)
         return output
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        returns an instance with all attributes already set
+
+        Args:
+            **dictionary:  a double pointer to a dictionary
+
+        Returns:
+            instance with all attributes already set
+        """
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        elif cls.__name__ == "Square":
+            dummy = cls(1)
+        else:
+            dummy = None
+
+        dummy.update(**dictionary)
+        return dummy
