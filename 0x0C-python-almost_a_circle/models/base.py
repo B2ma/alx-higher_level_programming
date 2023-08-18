@@ -58,3 +58,17 @@ class Base:
         json_string = cls.to_json_string(obj_list)
         with open(filename, mode="w", encoding="utf-8") as myfile:
             myfile.write(json_string)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        returns the list of the JSON string representation json_string
+
+        Args:
+            json_string: the string representing dictionaries
+
+        Returns:
+            list of the JSON string representation json_string
+         """
+        output = json.loads(json_string)
+        return output
