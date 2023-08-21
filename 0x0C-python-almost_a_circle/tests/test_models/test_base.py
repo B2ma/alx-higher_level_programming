@@ -190,6 +190,29 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(loaded_squares[0].size, square1.size)
         self.assertEqual(loaded_squares[1].size, square2.size)
 
+    def test_create_rectangle(self):
+        """Test create method for Rectangle class."""
+        rect_dict = {'id': 1, 'width': 10, 'height': 20, 'x': 3, 'y': 4}
+        rect_instance = Rectangle.create(**rect_dict)
+
+        self.assertIsInstance(rect_instance, Rectangle)
+        self.assertEqual(rect_instance.id, 1)
+        self.assertEqual(rect_instance.width, 10)
+        self.assertEqual(rect_instance.height, 20)
+        self.assertEqual(rect_instance.x, 3)
+        self.assertEqual(rect_instance.y, 4)
+
+    def test_create_square(self):
+        """Test create method for Square class."""
+        square_dict = {'id': 2, 'size': 5, 'x': 2, 'y': 3}
+        square_instance = Square.create(**square_dict)
+
+        self.assertIsInstance(square_instance, Square)
+        self.assertEqual(square_instance.id, 2)
+        self.assertEqual(square_instance.size, 5)
+        self.assertEqual(square_instance.x, 2)
+        self.assertEqual(square_instance.y, 3)
+
 
 if __name__ == '__main__':
     unittest.main()
