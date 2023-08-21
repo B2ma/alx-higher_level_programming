@@ -40,6 +40,8 @@ class Base:
         Returns:
             [] or JSON string representation of list_dictionaries
         """
+        if list_dictionaries is None:
+            return "[]"
         if not isinstance(list_dictionaries, list):
             raise TypeError("Input must be a list.")
 
