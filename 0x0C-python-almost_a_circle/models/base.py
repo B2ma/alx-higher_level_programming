@@ -59,6 +59,8 @@ class Base:
         Args:
             list_objs(list): a list of instances who inherits of Base
         """
+        if list_objs is None:
+            list_objs = []
         filename = cls.__name__ + ".json"
         obj_list = [obj.to_dictionary() for obj in list_objs]
         json_string = cls.to_json_string(obj_list)
