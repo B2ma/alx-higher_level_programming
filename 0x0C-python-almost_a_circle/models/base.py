@@ -40,10 +40,14 @@ class Base:
         Returns:
             [] or JSON string representation of list_dictionaries
         """
-        if list_dictionaries is None:
-            return []
-        else:
-            return json.dumps(list_dictionaries)
+        if not isinstance(list_dictionaries, list):
+            raise TypeError("Input must be a list.")
+
+        for item in list_dictionaries:
+            if not isinstance(item, dict):
+                raise TypeError("Each item in the list must be a dictionary.")
+
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -69,9 +73,21 @@ class Base:
 
         Returns:
             list of the JSON string representation json_string
-         """
-        output = json.loads(json_string)
-        return output
+        """
+        if json_string is None or json_string == "":
+            return []
+
+        try:
+            output = json.loads(json_string)
+            if not isinstance(output, list):
+                raise TypeError("JSON string does not represent a list.")
+            for item in output:
+                if not isinstance(item, dict):
+                    raise TypeError(
+                            "Each item in the list must be a dictionary.")
+            return output
+        except json.JSONDecodeError:
+            raise ValueError("Invalid JSON string.")
 
     @classmethod
     def create(cls, **dictionary):
@@ -85,14 +101,13 @@ class Base:
             instance with all attributes already set
         """
         if cls.__name__ == "Rectangle":
-            dummy = cls(1, 1)
+            sample = cls(1, 1)
         elif cls.__name__ == "Square":
-            dummy = cls(1)
+            sample = cls(1)
         else:
-            dummy = None
-
-        dummy.update(**dictionary)
-        return dummy
+            sample = None
+        sample.update(**dictionary)
+        return sample
 
     @classmethod
     def load_from_file(cls):

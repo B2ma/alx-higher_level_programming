@@ -129,19 +129,23 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """
-        assigns an argument to each attribute
+        Update the attributes of the Rectangle based on arguments.
 
         Args:
-            *args: arguments in the order: id, width, height, x, y
-            **kwargs: Key-value arguments for attribute updates
+            *args: Variable arguments in the order: id, width, height, x, y.
+            **kwargs: Key-value arguments for attribute updates.
         """
-        if args and len(args) > 0:
-            attributes = ["id", "width", "height", "x", "y"]
-            for itr, value in enumerate(args):
-                setattr(self, attributes[itr], value)
-        else:
-            for key, value in kwargs.items():
-                setattr(self, key, value)
+        attributes = ["id", "width", "height", "x", "y"]
+
+        for i, value in enumerate(args):
+            if not isinstance(value, int):
+                raise TypeError(f"{attributes[i]} must be an integer")
+            setattr(self, attributes[i], value)
+
+        for key, value in kwargs.items():
+            if not isinstance(value, int):
+                raise TypeError(f"{key} must be an integer")
+            setattr(self, key, value)
 
     def to_dictionary(self):
         """
@@ -150,5 +154,10 @@ class Rectangle(Base):
         Returns:
             dictionary representation of a Rectangle
         """
-        return {'id': self.id, 'width': self.width, 'height': self.height,
-                'x': self.x, 'y': self.y}
+        try:
+            return {
+                    'id': self.id, 'width': self.width,
+                    'height': self.height,
+                    'x': self.x, 'y': self.y}
+        except TypeError as e:
+            return {'error': str(e)}
