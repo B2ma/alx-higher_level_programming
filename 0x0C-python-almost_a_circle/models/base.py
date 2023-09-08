@@ -2,6 +2,7 @@
 """The base class Module"""
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -164,3 +165,32 @@ class Base:
             return obj_list
         except FileNotFoundError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        window = turtle.Screen()
+        window.title("Draw Rectangles and Squares")
+        t = turtle.Turtle()
+
+        for rect in list_rectangles:
+            t.penup()
+            t.goto(rect.x, rect.y)
+            t.pendown()
+            t.color("blue")
+            for _ in range(2):
+                t.forward(rect.width)
+                t.left(90)
+                t.forward(rect.height)
+                t.left(90)
+
+        for square in list_squares:
+            t.penup()
+            t.goto(square.x, square.y)
+            t.pendown()
+            t.color("red")
+            for _ in range(4):
+                t.forward(square.size)
+                t.left(90)
+
+        t.hideturtle()
+        window.exitonclick()
