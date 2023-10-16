@@ -1,8 +1,8 @@
 #!/usr/bin/node
 const args = process.argv.slice(2).map(arg => parseInt(arg));
 const largest = Math.max(...args);
-args.splice(args.indexOf(largest), 1);
-let secondLargest = Math.max(...args);
+const filteredArgs = args.filter(num => num !== largest);
+let secondLargest = Math.max(...filteredArgs);
 if (args.length <= 1 || isNaN(secondLargest)) {
   secondLargest = 0;
 }
