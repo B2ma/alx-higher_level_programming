@@ -1,11 +1,7 @@
 #!/usr/bin/node
-let index = 2;
-let argCount = 0;
-while (process.argv[index] !== undefined) {
-  argCount++;
-  console.log(process.argv[index]);
-  index++;
-}
-if (argCount === 0) {
+
+if (process.argv[2]) {
+  console.log(process.argv[2]);
+} else {
   console.log('No argument');
 }
