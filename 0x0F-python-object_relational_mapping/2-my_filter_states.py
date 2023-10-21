@@ -52,6 +52,9 @@ def list_states_inputed(username, password, database_name, state_name):
 
 
 if __name__ == "__main__":
+    if len(sys.argv) != 5:
+        print("Usage: python script_name.py <username> <password>\
+                 <database_name> <state_name>")
     username = sys.argv[1]
     password = sys.argv[1]
     database_name = sys.argv[3]
