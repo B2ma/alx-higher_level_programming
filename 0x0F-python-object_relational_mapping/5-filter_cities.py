@@ -33,8 +33,8 @@ def list_cities_warg(username, password, database_name, state_name):
                 ORDER BY `c`.`id`")
         cursor.execute(query,(state_name,))
         cities = cursor.fetchall()
-        for city in cities:
-            print(city)
+        city_names = ", ".join([city[0] for city in cities])
+        print(city_names)
 
     except MySQLdb.Error as e:
         print("Error connecting to the database:", e)
