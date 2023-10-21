@@ -27,18 +27,9 @@ def list_states_inputed(username, password, database_name, state_name):
                 host='localhost',
                 port=3306)
         cursor = connection.cursor()
-        query = """
-                SELECT s.id, s.name
-                FROM states AS s
-                INNER JOIN (
-                    SELECT DISTINCT name, MIN(id) AS id
-                    FROM states
-                    WHERE name = '{}'
-                    GROUP BY name
-                ) AS subquery
-                ON s.id = subquery.id
-                ORDER BY s.id ASC
-                """.format(state_name)
+        query = ("SELECT *\
+                FROM `states`\
+                WHERE BINARY `name`= '{}'".format(state_name))
         cursor.execute(query)
         states = cursor.fetchall()
         for state in states:
