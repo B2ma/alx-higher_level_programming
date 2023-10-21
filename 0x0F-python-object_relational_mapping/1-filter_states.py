@@ -28,7 +28,7 @@ def list_states(username, password, database_name):
         cursor = connection.cursor()
         query = "SELECT *\
                  FROM `states`\
-                 WHERE name LIKE BINARY 'N%'\
+                 WHERE name LIKE 'N%'\
                  ORDER BY id ASC"
         cursor.execute(query)
         states = cursor.fetchall()
