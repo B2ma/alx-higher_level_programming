@@ -27,18 +27,18 @@ def list_states_inputed(username, password, database_name, state_name):
                 host='localhost',
                 port=3306)
         cursor = connection.cursor()
-        query = (
-            f"SELECT s.id, s.name "
-            f"FROM states AS s "
-            f"INNER JOIN ( "
-            f"    SELECT DISTINCT name, MIN(id) AS id "
-            f"    FROM states "
-            f"    WHERE name = '{state_name}' "
-            f"    GROUP BY name "
-            f") AS subquery "
-            f"ON s.id = subquery.id "
-            f"ORDER BY s.id ASC"
-        )
+        query = """
+                SELECT s.id, s.name
+                FROM states AS s
+                INNER JOIN (
+                    SELECT DISTINCT name, MIN(id) AS id
+                    FROM states
+                    WHERE name = '{}'
+                    GROUP BY name
+                ) AS subquery
+                ON s.id = subquery.id
+                ORDER BY s.id ASC
+                """.format(state_name)
         cursor.execute(query)
         states = cursor.fetchall()
         for state in states:
