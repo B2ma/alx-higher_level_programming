@@ -15,8 +15,8 @@ def list_cities_warg(username, password, database_name, state_name):
         password (str): MySQL password.
         database_name (str): Name of the database to retrieve states from.
     Returns:
-        None: Prints the cities of a given state with names matching the provided
-        argument in ascending order by states.id.
+        None: Prints the cities of a given state with names matching the
+        provided argument in ascending order by states.id.
     """
     try:
         connection = MySQLdb.connect(
@@ -31,7 +31,7 @@ def list_cities_warg(username, password, database_name, state_name):
                 ON `c`.`state_id` = `s`.`id` \
                 WHERE `s`.`name` = %s\
                 ORDER BY `c`.`id`")
-        cursor.execute(query,(state_name,))
+        cursor.execute(query, (state_name,))
         cities = cursor.fetchall()
         city_names = ", ".join([city[0] for city in cities])
         print(city_names)
