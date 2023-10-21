@@ -26,8 +26,8 @@ def list_states(username, password, database_name):
                 host='localhost',
                 port=3306)
         cursor = connection.cursor()
-        query = "SELECT * FROM states WHERE name LIKE\
-                'N%' ORDER BY states.id ASC LIMIT 2"
+        query = "SELECT MIN(id), name FROM states WHERE name LIKE\
+                'N%' GROUP BY name ORDER BY MIN(id) ASC"
         cursor.execute(query)
         states = cursor.fetchall()
         for state in states:
