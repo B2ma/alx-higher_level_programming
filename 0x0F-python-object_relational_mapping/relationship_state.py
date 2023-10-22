@@ -8,9 +8,6 @@ from sqlalchemy.orm import relationship
 from relationship_city import Base, City
 
 
-Base = declarative_base()
-
-
 class State(Base):
     """
     Represents a state in the states table of the database.
