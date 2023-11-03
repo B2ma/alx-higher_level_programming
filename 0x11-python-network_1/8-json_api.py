@@ -13,7 +13,7 @@ if __name__ == "__main__":
         q = sys.argv[1]
 
     payload = {'q': q}
-    response = requests.posr('http://0.0.0.0:5000/search_user', data=payload)
+    response = requests.post('http://0.0.0.0:5000/search_user', data=payload)
 
     try:
         json_data = response.json()
