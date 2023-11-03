@@ -12,13 +12,13 @@ if __name__ == "__main__":
     else:
         q = sys.argv[1]
 
-    payload = {'q': q}
-    response = requests.post('http://0.0.0.0:5000/search_user', data=payload)
+    payload = {"q": q}
+    response = requests.post("http://0.0.0.0:5000/search_user", data=payload)
 
     try:
         json_data = response.json()
         if json_data:
-            print("[{}] {}".format(json_data.get('id'), json_data.get('name')))
+            print("[{}] {}".format(json_data.get("id"), json_data.get("name")))
         else:
             print("No result")
     except ValueError:
