@@ -14,4 +14,4 @@ if __name__ == "__main__":
     payload = {'email': email}
     response = requests.post(url, data=payload)
 
-    print("Your email is: {}".format(response.text))
+    print("Your email is: {}".format(response.text.strip()))
