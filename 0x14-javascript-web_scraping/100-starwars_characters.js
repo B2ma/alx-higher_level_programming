@@ -9,7 +9,6 @@ request(apiUrl, function (error, response, body) {
   if (error) {
     console.error(error);
   } else {
-
     const movieData = JSON.parse(body);
 
     if (response.statusCode === 200) {
