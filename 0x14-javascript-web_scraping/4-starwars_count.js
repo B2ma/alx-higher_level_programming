@@ -13,7 +13,7 @@ request(apiUrl, function (error, response, body) {
 
     // Filter films where "Wedge Antilles" is present
     const filmsWithWedge = filmsData.results.filter(film =>
-      film.characters.includes(`https://swapi-api.alx-tools.com/api/people/18/`)
+      film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')
     );
 
     // Print the number of movies
