@@ -1,10 +1,14 @@
-document.addEventListener('DOMContentLoaded', function () {
-  $('#btn_translate').click(function () {
-    const languageCode = $('#language_code').val();
-    const apiUrl = 'https://www.fourtonfish.com/hellosalut/hello/';
+$(function () {
+  $('#add_item').click(function () {
+    const newItem = $('<li>Item</li>');
+    $('ul.my_list').append(newItem);
+  });
 
-    $.get(apiUrl, { lang: languageCode }, function (data) {
-      $('#hello').text(data.hello);
-    });
+  $('#remove_item').click(function () {
+    $('ul.my_list li:last-child').remove();
+  });
+
+  $('#clear_list').click(function () {
+    $('ul.my_list').empty();
   });
 });

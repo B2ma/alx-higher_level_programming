@@ -1,13 +1,14 @@
-document.addEventListener('DOMContentLoaded', function () {
+$(function () {
   $('#add_item').click(function () {
-    $('.my_list').append('<li>Item</li>');
+    const newItem = $('<li>Item</li>');
+    $('ul.my_list').append(newItem);
   });
 
   $('#remove_item').click(function () {
-    $('.my_list li:last-child').remove();
+    $('ul.my_list li:last-child').remove();
   });
 
   $('#clear_list').click(function () {
-    $('.my_list').empty();
+    $('ul.my_list').empty();
   });
 });
