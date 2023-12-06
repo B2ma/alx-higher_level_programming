@@ -1,4 +1,4 @@
-#!/usr/bin/node
+
 $(document).ready(function () {
   // Add a click event listener to the element with id "toggle_header"
   $('#toggle_header').click(function () {

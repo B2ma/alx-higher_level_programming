@@ -1,4 +1,3 @@
-#!/usr/bin/node
 
 $(document).ready(function () {
   // Add a click event listener to the element with id "add_item"

@@ -1,4 +1,3 @@
-#!/usr/bin/node
 $(document).ready(function () {
   // Make an AJAX request to fetch data from the specified URL
   $.get('https://hellosalut.stefanbohacek.dev/?lang=fr', function (data) {

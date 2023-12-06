@@ -1,4 +1,4 @@
-#!/usr/bin/node
+
 $(document).ready(function () {
   // Make an AJAX request to fetch data from the SWAPI API
   $.get('https://swapi-api.alx-tools.com/api/people/5/?format=json', function (data) {
